@@ -1,2 +1,2 @@
 # leetCodeRecords
-Algos in JS / TS / Rust
+Algo in JS / TS / Rust
