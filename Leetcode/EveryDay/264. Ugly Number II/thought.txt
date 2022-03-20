@@ -1,0 +1,14 @@
+1.Essentially, we have to multiply the existed ugly numbers by 2, 3 and 5 to get a bigger ugly number, however, if we blindly multiply all the existed numbers by 2, 3 and 5, then the number could grow much faster than needed
+2.Hence, every time we only try to find the next smallest ugly number
+3.Also, since any existed number will be multiplied by 2, 3 and 5 once and only once, otherwise duplicate, we can use a pointer to keep track of where the 2, 3 and 5 are going to multiply in the next step.
+4.Once, we find the next minimum, we can move on the corresponding pointer, otherwise it always stays at the already existed ugly number which would makes pointer useless
+
+3 pointers 
+-------------------------------------
+优先队列（小根堆）解法
+有了基本的分析思路，一个简单的解法是使用优先队列：
+
+起始先将最小丑数 11 放入队列
+每次从队列取出最小值 xx，然后将 xx 所对应的丑数 2x2x、3x3x 和 5x5x 进行入队。
+对步骤 2 循环多次，第 nn 次出队的值即是答案。
+为了防止同一丑数多次进队，我们需要使用数据结构 SetSet 来记录入过队列的丑数。
